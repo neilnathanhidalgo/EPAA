@@ -1,2 +1,0 @@
-user: dpy_epaa
-pass: 7iJDK4PklPYAbHhZ
