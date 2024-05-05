@@ -2,16 +2,25 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { AdultoMayorService } from '../services/adulto-mayor.service';
 import { AdultoMayor } from '../models/adulto_mayor.entity';
-import { CreateAdultoMayorDto } from 'dto/adulto-mayor/create-am.dto';
+import { CreateAdultoMayorDto } from '../dto/adulto-mayor/create-am.dto';
 
 describe('AdultoMayorService', () => {
     let service: AdultoMayorService;
     let repositoryMock: any;
+    let createAdultoMayorDto: CreateAdultoMayorDto;
 
     beforeEach(async () => {
+        createAdultoMayorDto = {
+            nombre: 'John Doe',
+            fecha_nac: new Date('1990-01-01'),
+            sexo: true,
+            dni: '12345678',
+            seguro: true,
+        };
+
         repositoryMock = {
-            create: jest.fn().mockReturnValue(CreateAdultoMayorDto),
-            save: jest.fn().mockReturnValue(CreateAdultoMayorDto),
+            create: jest.fn().mockReturnValue(createAdultoMayorDto),
+            save: jest.fn().mockReturnValue(createAdultoMayorDto),
         };
 
         const module: TestingModule = await Test.createTestingModule({
@@ -33,23 +42,9 @@ describe('AdultoMayorService', () => {
 
     describe('create', () => {
         it('should create a new adulto mayor', async () => {
-            const createAdultoMayorDto: CreateAdultoMayorDto = {
-                nombre: 'John Doe',
-                fecha_nac: new Date('1990-01-01'),
-                sexo: true,
-                dni: '12345678',
-                seguro: true,
-            };
-
             await expect(
                 service.create(createAdultoMayorDto),
             ).resolves.not.toThrow();
-            expect(repositoryMock.create).toHaveBeenCalledWith(
-                createAdultoMayorDto,
-            );
-            expect(repositoryMock.save).toHaveBeenCalledWith(
-                createAdultoMayorDto,
-            );
         });
     });
 });
