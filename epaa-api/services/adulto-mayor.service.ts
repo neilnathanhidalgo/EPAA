@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AdultoMayor } from '../models/adulto_mayor.entity';
 import { CreateAdultoMayorDto } from '../dto/adulto-mayor/create-am.dto';
-import { NotFoundError } from 'rxjs';
 import { UpdateAdultoMayorDto } from 'dto/adulto-mayor/update-am.dto';
 
 @Injectable()

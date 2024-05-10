@@ -6,7 +6,10 @@ export class Persona {
     id_persona: number;
 
     @Column()
-    nombre: string;
+    nombres: string;
+
+    @Column()
+    apellidos: string;
 
     @Column()
     fecha_nac: Date;
@@ -16,4 +19,7 @@ export class Persona {
 
     @Column()
     sexo: boolean;
+
+    @Column()
+    foto_perfil: string;
 }

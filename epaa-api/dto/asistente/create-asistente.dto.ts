@@ -6,7 +6,7 @@ import {
     IsOptional,
 } from 'class-validator';
 
-export class CreateAdultoMayorDto {
+export class CreateAsistenteDto {
     @IsString()
     @IsNotEmpty()
     nombres: string;
@@ -26,10 +26,6 @@ export class CreateAdultoMayorDto {
     @IsString()
     @IsNotEmpty()
     dni: string;
-
-    @IsBoolean()
-    @IsOptional()
-    seguro: boolean;
 
     @IsString()
     @IsOptional()

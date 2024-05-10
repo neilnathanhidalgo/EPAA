@@ -8,5 +8,5 @@ export class Asistente {
     persona: Persona;
 
     @PrimaryGeneratedColumn()
-    id_adulto_mayor: number;
+    id_asistente: number;
 }
