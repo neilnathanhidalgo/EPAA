@@ -5,12 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e1e19ef-e022-4b94-b608-9c5fec9146dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DA/RF.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/DA/RF.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DA/datasets/dataset_transformation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/DA/datasets/dataset_transformation.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epaa-api/controllers/adulto-mayor.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/controllers/adulto-mayor.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/dto/adulto-mayor/create-am.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/dto/adulto-mayor/create-am.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/models/asistente.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/models/asistente.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/models/persona.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/models/persona.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/nest-cli.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epaa-api/services/adulto-mayor.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/services/adulto-mayor.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/src/app.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/src/app.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epaa-api/test/adulto-mayor.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/test/adulto-mayor.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/test/app.e2e-spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/test/app.e2e-spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/test/jest-e2e.json" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/test/jest-e2e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/tsconfig.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/tsconfig.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epaa-api/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/epaa-api/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,22 +55,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Estudios/Ciclo X 2024-I/DPY/TG/EPAA&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "D:/Estudios/Tesis/T_CODE",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Estudios\Ciclo X 2024-I\DPY\TG\EPAA\DA" />
@@ -81,6 +95,7 @@
       <workItem from="1715084194902" duration="46000" />
       <workItem from="1715124201863" duration="1258000" />
       <workItem from="1715171950103" duration="3800000" />
+      <workItem from="1715703244407" duration="21000" />
     </task>
     <servers />
   </component>
