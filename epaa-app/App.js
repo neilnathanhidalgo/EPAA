@@ -1,11 +1,26 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { StyleSheet, Text, View, TextInput } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text style={styles.personal}>Vamos a pasar</Text>
+      {/* Rectángulo superior */}
+      <View style={[styles.rectangle, { backgroundColor: '#5CF4D6' }]} />
+      <View style={[styles.rectangle, { backgroundColor: '#00E5BE' }]} />
+      <View style={[styles.rectangle, { backgroundColor: '#00BBC2' }]} />
+      <View style={[styles.rectangle, { backgroundColor: '#0097AA' }]} />
+      
+      {/* Contenedor del logo */}
+      <View style={styles.logoContainer}>
+        <Image source={require('../assets/logo.png')} style={styles.logo} />
+      </View>
+      
+      {/* Rectángulo inferior */}
+      <View style={[styles.rectangle, { backgroundColor: '#0097AA' }]} />
+      <View style={[styles.rectangle, { backgroundColor: '#00BBC2' }]} />
+      <View style={[styles.rectangle, { backgroundColor: '#00E5BE' }]} />
+      <View style={[styles.rectangle, { backgroundColor: '#5CF4D6' }]} />
       <StatusBar style="auto" />
     </View>
   );
@@ -14,12 +29,20 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#0097AA",
     alignItems: "center",
     justifyContent: "center",
   },
 
-  personal: {
-    color: "blue",
+  logo: {
+    width: 165,
+    height: 167,
+    resizeMode: 'contain',
   },
+
+  rectangle: {
+    width: 375,
+    height: 7,
+  },
+  
 });
