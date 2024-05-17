@@ -5,8 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Login');
-    }, 4000); // Cambia el tiempo de espera según tus necesidades, en este caso a los 2 segundos
+      navigation.navigate('Welcome');
+    }, 2000); // Cambia el tiempo de espera según tus necesidades, en este caso a los 3 segundos
   }, []);
 
   return (
@@ -64,5 +64,6 @@ const style = StyleSheet.create({
       rectangle: {
         width: "100%",
         height: 10,
+        bottom:0,
       },
 })
