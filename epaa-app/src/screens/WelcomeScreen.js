@@ -7,7 +7,7 @@ const WelcomeScreen = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('Login');
-    }, 4000); // Cambia el tiempo de espera según tus necesidades, en este caso a los 3 segundos
+    }, 3000); // Cambia el tiempo de espera según tus necesidades, en este caso a los 3 segundos
   }, []);
 
   const[fontsLoaded] = useFonts({
