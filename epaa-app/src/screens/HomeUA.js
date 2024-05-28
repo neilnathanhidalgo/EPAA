@@ -4,6 +4,14 @@ import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
+import { TouchableOpacity } from 'react-native';
+
+const cuidadores = [
+    { name1: 'Felipe', lastname1: 'Adanaque Medina' },
+    { name2: 'Alejandra', lastname2: 'Ruiz Zapata' },
+    { name3: 'Sebastián', lastname3: 'Nole Castro' },
+    { name4: 'Mirella', lastname4: 'Rufino Granja' },
+  ];
 
 const HomeUA = () => {   
     const [fontsLoaded] = useFonts({
@@ -52,8 +60,8 @@ const HomeUA = () => {
                 <View style={[styles.c1, { backgroundColor: "#1B3B52"}]}>
                     <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
                     <View style={styles.c1TextContainer}>
-                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>NOMBRE</Text>
-                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>APELLIDO</Text>
+                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[0].name1.toUpperCase()}</Text>
+                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[0].lastname1.toUpperCase()}</Text>
                     </View>
                 </View>
             </View>
@@ -63,8 +71,8 @@ const HomeUA = () => {
                 <View style={[styles.c1, { backgroundColor: "#F6931E" }]}>
                     <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
                     <View style={styles.c1TextContainer}>
-                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>NOMBRE</Text>
-                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>APELLIDO</Text>
+                    <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[1].name2.toUpperCase()}</Text>
+                    <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[1].lastname2.toUpperCase()}</Text>
                     </View>
                 </View>
             </View>
@@ -74,8 +82,8 @@ const HomeUA = () => {
                 <View style={[styles.c1, { backgroundColor: "#FB663C" }]}>
                     <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
                     <View style={styles.c1TextContainer}>
-                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>NOMBRE</Text>
-                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>APELLIDO</Text>
+                    <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[2].name3.toUpperCase()}</Text>
+                    <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[2].lastname3.toUpperCase()}</Text>
                     </View>
                 </View>
             </View>
@@ -85,12 +93,18 @@ const HomeUA = () => {
                 <View style={[styles.c1, { backgroundColor: "#8A572C" }]}>
                     <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
                     <View style={styles.c1TextContainer}>
-                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>NOMBRE</Text>
-                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>APELLIDO</Text>
+                    <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[3].name4.toUpperCase()}</Text>
+                    <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[3].lastname4.toUpperCase()}</Text>
                     </View>
                 </View>
             </View>
-            
+
+            {/* Botón "+ AGREGAR CUIDADOR" */}
+            <TouchableOpacity style={styles.addButton}>
+            <Text style={styles.addButtonText}>+ AGREGAR CUIDADOR</Text>
+            </TouchableOpacity>
+
+
             {/* Barra inferior */}
             <View style={[styles.rectangle, styles.bottomBar]} />
         </View>
@@ -215,7 +229,7 @@ const styles = StyleSheet.create({
 
     c1Icon: {
         marginLeft: 10, // Centrar el ícono hacia la izquierda
-        marginRight: 15, // Centrar el texto según el ícono
+        marginRight: 10, // Centrar el texto según el ícono
     },
 
     c1TextContainer: {
@@ -230,6 +244,23 @@ const styles = StyleSheet.create({
     c1Apellido: {
         marginTop: 0, // Espacio entre NOMBRE y APELLIDO
     },
+
+    addButton: {
+        backgroundColor: '#02515B',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 50,
+        width: 300,
+        marginHorizontal: 'auto',
+        borderRadius: 20,
+        marginTop: 23, // Ajusta según sea necesario
+    },
+    
+    addButtonText: {
+        color: '#FFFFFF',
+        fontSize: 20,
+        fontFamily: 'Oswald',
+    },    
 
     bottomBar: {
         position: 'absolute',
