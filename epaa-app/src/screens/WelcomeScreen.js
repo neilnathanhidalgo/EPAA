@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet, Image, Dimensions, Text } from 'react-native';
+import { View, StyleSheet, Image, Dimensions, Text, Platform, StatusBar as RNStatusBar } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 
@@ -7,47 +7,46 @@ const WelcomeScreen = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('Login');
-    }, 3000); // Cambia el tiempo de espera según tus necesidades, en este caso a los 3 segundos
+    }, 3000); // Tiempo de espera de 3 segundos
   }, []);
 
-  const[fontsLoaded] = useFonts({
+  const [fontsLoaded] = useFonts({
     Oswald: require("../assets/fonts/Oswald.ttf"),
     Quicksand: require("../assets/fonts/Quicksand.ttf")
-  })
+  });
 
   return (
-    <View style={style.container}>
-      <StatusBar style='auto'/>
+    <View style={styles.container}>
+      <StatusBar style='dark' />
 
-      {/*Logo*/}
-      <View style={style.logoContainer}>
-        <Image source={require('../assets/logo.png')} style={style.logo}/>
+      {/* Logo */}
+      <View style={styles.logoContainer}>
+        <Image source={require('../assets/logo.png')} style={styles.logo} />
       </View>
 
-      {/*Texto*/}
-      <Text style={[style.welcomeText, fontsLoaded && { fontFamily: "Oswald" }]}>
+      {/* Texto */}
+      <Text style={[styles.welcomeText, fontsLoaded && { fontFamily: "Oswald" }]}>
         Te damos la bienvenida a
       </Text>
 
-      <Text style={[style.EPAAText, fontsLoaded && { fontFamily: "Oswald" }]}>
+      <Text style={[styles.EPAAText, fontsLoaded && { fontFamily: "Oswald" }]}>
         EPAA
       </Text>
 
-      <Text style={[style.lemaText, fontsLoaded && { fontFamily: "Quicksand" }]}>
+      <Text style={[styles.lemaText, fontsLoaded && { fontFamily: "Quicksand" }]}>
         "Bienestar a cada momento"
       </Text>
 
-      {/*Imagen BIENVENIDA*/}
-      <View style={style.bContainer}>
-        <Image source={require('../assets/welcome.jpeg')} style={style.blogo}/>
+      {/* Imagen BIENVENIDA */}
+      <View style={styles.bContainer}>
+        <Image source={require('../assets/welcome.jpeg')} style={styles.blogo} />
       </View>
 
-      {/*Rectángulos inferiores*/}
-      <View style={[style.rectangle, { backgroundColor: "#0097AA", bottom:30}]}/>
-      <View style={[style.rectangle, { backgroundColor: "#00BBC2", bottom:20}]}/>
-      <View style={[style.rectangle, { backgroundColor: "#00E5BE", bottom:10}]}/>
-      <View style={[style.rectangle, { backgroundColor: "#5CF4D6", bottom:0}]}/>
-
+      {/* Rectángulos inferiores */}
+      <View style={[styles.rectangle, { backgroundColor: "#0097AA", bottom: 30 }]} />
+      <View style={[styles.rectangle, { backgroundColor: "#00BBC2", bottom: 20 }]} />
+      <View style={[styles.rectangle, { backgroundColor: "#00E5BE", bottom: 10 }]} />
+      <View style={[styles.rectangle, { backgroundColor: "#5CF4D6", bottom: 0 }]} />
     </View>
   );
 };
@@ -57,67 +56,59 @@ export default WelcomeScreen;
 const screenHeight = Dimensions.get("window").height;
 const totalRectangleHeight = 8 * 7;
 
-const style = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#FFFFFF",
-        },
-    
-      logoContainer: {
-        position: 'absolute',
-        top: 80,
-        left: 20,
-      },
-    
-      logo: {
-        width: 75,
-        height: 77,
-        resizeMode: "contain",
-      },
-
-      welcomeText: {
-        color: "#2A7581", //Color
-        fontSize: 35, //Tamaño
-        marginTop: 180, //Margen superior
-        marginLeft: 35,
-        position: 'absolute',
-      },
-
-      EPAAText: {
-        color: "#02515B", //Color
-        fontSize: 50, //Tamaño
-        marginTop: 230, //Margen superior
-        marginLeft: 35,
-        position: 'absolute',
-      },
-
-      lemaText: {
-        color: "#02515B", //Color
-        fontSize: 25, //Tamaño
-        marginTop: 340, //Margen superior
-        textAlign: 'center',
-        textAlignVertical: 'center',
-      },
-
-      bContainer: {
-        flex: 1,
-        alignItems: "center",
-        width: "100%",
-        height: screenHeight - totalRectangleHeight,
-        position: 'absolute',
-        bottom:-150,
-      },
-    
-      blogo: {
-        width:"143%",
-        height: "100%",
-        resizeMode: "contain",
-      },
-    
-      rectangle: {
-        width: "100%",
-        height: 10,
-        position: 'absolute',
-        
-      },
-})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    paddingTop: Platform.OS === 'android' ? RNStatusBar.currentHeight : 0, // Asegura que el contenido esté debajo de la barra de estado
+  },
+  logoContainer: {
+    position: 'absolute',
+    top: 80,
+    left: 20,
+  },
+  logo: {
+    width: 75,
+    height: 77,
+    resizeMode: "contain",
+  },
+  welcomeText: {
+    color: "#2A7581",
+    fontSize: 35,
+    marginTop: 180,
+    marginLeft: 35,
+    position: 'absolute',
+  },
+  EPAAText: {
+    color: "#02515B",
+    fontSize: 50,
+    marginTop: 230,
+    marginLeft: 35,
+    position: 'absolute',
+  },
+  lemaText: {
+    color: "#02515B",
+    fontSize: 25,
+    marginTop: 340,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+  },
+  bContainer: {
+    flex: 1,
+    alignItems: "center",
+    width: "100%",
+    height: screenHeight - totalRectangleHeight,
+    position: 'absolute',
+    bottom: -150,
+  },
+  blogo: {
+    width: "143%",
+    height: "100%",
+    resizeMode: "contain",
+  },
+  rectangle: {
+    width: "100%",
+    height: 10,
+    position: 'absolute',
+  },
+});
