@@ -6,7 +6,7 @@ import { useFonts } from 'expo-font';
 const WelcomeScreen = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Login');
+      navigation.navigate('TypeUser');
     }, 3000); // Tiempo de espera de 3 segundos
   }, []);
 
@@ -17,7 +17,7 @@ const WelcomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar style='dark' />
+      <StatusBar style='auto' />
 
       {/* Logo */}
       <View style={styles.logoContainer}>
@@ -61,6 +61,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
     paddingTop: Platform.OS === 'android' ? RNStatusBar.currentHeight : 0, // Asegura que el contenido esté debajo de la barra de estado
+    paddingTop: Platform.OS === 'ios' ? RNStatusBar.currentHeight : 0, // Padding para la barra de estado en iOs
+
   },
   logoContainer: {
     position: 'absolute',

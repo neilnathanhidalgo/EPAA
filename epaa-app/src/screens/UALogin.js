@@ -12,11 +12,11 @@ const pinLength = 4;
 const dialPadSize = width * .2;
 
 const users = [
-  { name1: 'Emilio', name2: 'Eduardo', lastname1: 'Díaz', lastname2: 'Garnique', pin: '1111' },
+    { name1: 'Emilio', name2: 'Eduardo', lastname1: 'Díaz', lastname2: 'Garnique', pin: '1111' },
 ];
 
 
-const LoginScreen = ({ navigation }) => {
+const UALogin = ({ navigation }) => {
   const [pinCode, setPinCode] = useState([]);
   const [currentUser, setCurrentUser] = useState(users[0]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -149,7 +149,7 @@ const LoginScreen = ({ navigation }) => {
   );
 };
 
-export default LoginScreen;
+export default UALogin;
 
 const style = StyleSheet.create({
   container: {

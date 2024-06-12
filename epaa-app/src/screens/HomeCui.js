@@ -10,14 +10,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-const cuidadores = [
-    { name1: 'Felipe', lastname1: 'Adanaque Medina' },
-    { name2: 'Alejandra', lastname2: 'Ruiz Zapata' },
-    { name3: 'Esteban', lastname3: 'Castillo Soto' },
-    { name4: 'Mirella', lastname4: 'Rufino Granja' },
+const ua = [
+    { name1: 'Emilio', name2: 'Eduardo', lastname1: 'Díaz', lastname2: 'Garnique' },
   ];
 
-const HomeUA = ({navigation}) => {   
+const HomeCui = ({navigation}) => {   
     const [fontsLoaded] = useFonts({
         Oswald: require("../assets/fonts/Oswald.ttf"),
     });
@@ -35,7 +32,7 @@ const HomeUA = ({navigation}) => {
                 <View style={styles.topBarContent}>
 
                     {/* Contenedor para HOME y texto */}
-                    <TouchableOpacity onPress={() => navigation.navigate('HomeUA')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('HomeCui')}>
                         <View style={styles.homeContainer}>
                             <Ionicons name="home" size={40} color="#FFFFFF" style={styles.home} />
                             <Text style={[styles.homeText, { fontFamily: "Oswald" }]}>HOME</Text>
@@ -56,59 +53,25 @@ const HomeUA = ({navigation}) => {
                 </View>
             </View>
             
-            {/* Contenedor para CUIDADORES e icono LL */}
-            <View style={styles.cuidadoresContainer}>
-                <Text style={[styles.c, { fontFamily: "Oswald" }]}>CUIDADORES</Text>
-                <FontAwesome6 name="square-phone" size={87} color="#FFBE00" style={styles.ll} />
+            {/* Contenedor para CUIDADORES */}
+            <View style={styles.cContainer}>
+                <Text style={[styles.c, { fontFamily: "Oswald", textAlign: 'center' }]}>USUARIOS ASISTIDOS</Text>
             </View>
 
-            {/* Contenedor para CUIDADOR1 */}
-            <View style={styles.cuidador1Container}>
+            {/* Contenedor para USUARIOASISTIDO1 */}
+            <View style={styles.ua1Container}>
                 <View style={[styles.c1, { backgroundColor: "#1B3B52"}]}>
                     <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
                     <View style={styles.c1TextContainer}>
-                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[0].name1.toUpperCase()}</Text>
-                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[0].lastname1.toUpperCase()}</Text>
+                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{ua[0].name1.toUpperCase()}</Text>
+                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{ua[0].lastname1.toUpperCase()}</Text>
                     </View>
                 </View>
             </View>
 
-            {/* Contenedor para CUIDADOR2 */}
-            <View style={[styles.cuidador2Container]}>
-                <View style={[styles.c1, { backgroundColor: "#F6931E" }]}>
-                    <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
-                    <View style={styles.c1TextContainer}>
-                    <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[1].name2.toUpperCase()}</Text>
-                    <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[1].lastname2.toUpperCase()}</Text>
-                    </View>
-                </View>
-            </View>
-
-            {/* Contenedor para CUIDADOR3 */}
-            <View style={[styles.cuidador3Container]}>
-                <View style={[styles.c1, { backgroundColor: "#FB663C" }]}>
-                    <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
-                    <View style={styles.c1TextContainer}>
-                    <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[2].name3.toUpperCase()}</Text>
-                    <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[2].lastname3.toUpperCase()}</Text>
-                    </View>
-                </View>
-            </View>
-
-            {/* Contenedor para CUIDADOR4 */}
-            <View style={[styles.cuidador4Container]}>
-                <View style={[styles.c1, { backgroundColor: "#8A572C" }]}>
-                    <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
-                    <View style={styles.c1TextContainer}>
-                    <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[3].name4.toUpperCase()}</Text>
-                    <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[3].lastname4.toUpperCase()}</Text>
-                    </View>
-                </View>
-            </View>
-
-            {/* Botón "+ AGREGAR CUIDADOR" */}
+            {/* Botón "+ AGREGAR UA" */}
             <TouchableOpacity style={styles.addButton}>
-            <Text style={styles.addButtonText}>+ AGREGAR CUIDADOR</Text>
+            <Text style={styles.addButtonText}>+ AGREGAR USUARIO ASISTIDO</Text>
             </TouchableOpacity>
 
             {/* Barra inferior */}
@@ -131,7 +94,7 @@ const HomeUA = ({navigation}) => {
     );
 };
 
-export default HomeUA;
+export default HomeCui;
 
 const styles = StyleSheet.create({
     container: {
@@ -199,45 +162,22 @@ const styles = StyleSheet.create({
         marginTop: -10,
     },
 
-    cuidadoresContainer: {
-        flexDirection: 'row',
+    cuidador1Container: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 10,
-    },
+        flex: 1, // Agregado para que el contenedor sea un contenedor de flexbox
+    },    
 
     c: {
         color: '#0A7280',
         fontSize: 45,
-        marginRight: 25,
-    },
-
-    ll: {
-        padding: 0,
-    },
-
-    cuidador1Container: {
-        alignItems: 'center',
-        justifyContent: 'center',
         marginTop: 10,
     },
 
-    cuidador2Container: {
+    ua1Container: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 15,
-    },
-
-    cuidador3Container: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
-    },
-
-    cuidador4Container: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
+        marginTop: 10,
     },
 
     c1: {
