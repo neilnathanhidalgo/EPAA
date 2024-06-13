@@ -7,6 +7,10 @@ dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+<<<<<<< HEAD
   await app.listen(3000 || 3500);
+=======
+  await app.listen(3000);
+>>>>>>> frontend
 }
 bootstrap();

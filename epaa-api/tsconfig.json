@@ -16,8 +16,12 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
+<<<<<<< HEAD
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true,
     "strict": true,
+=======
+    "noFallthroughCasesInSwitch": false
+>>>>>>> frontend
   }
 }

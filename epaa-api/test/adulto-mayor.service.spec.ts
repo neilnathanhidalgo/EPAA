@@ -1,7 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { NotFoundException } from '@nestjs/common';
+<<<<<<< HEAD
 import { AdultoMayorService } from '../src/services/adulto-mayor.service';
+=======
+import { AdultoMayorService } from '../services/adulto-mayor.service';
+>>>>>>> frontend
 import { AdultoMayor } from '../models/adulto_mayor.entity';
 import { CreateAdultoMayorDto } from '../dto/adulto-mayor/create-am.dto';
 import { UpdateAdultoMayorDto } from 'dto/adulto-mayor/update-am.dto';
@@ -14,8 +18,12 @@ describe('AdultoMayorService', () => {
 
     beforeEach(async () => {
         createAdultoMayorDto = {
+<<<<<<< HEAD
             nombres: 'John',
             apellidos: 'Doe',
+=======
+            nombre: 'John Doe',
+>>>>>>> frontend
             fecha_nac: new Date('1990-01-01'),
             sexo: true,
             dni: '12345678',
@@ -23,6 +31,10 @@ describe('AdultoMayorService', () => {
         };
 
         updateAdultoMayorDto = {
+<<<<<<< HEAD
+=======
+            nombre: 'Jonh Suh',
+>>>>>>> frontend
             seguro: false,
         };
 

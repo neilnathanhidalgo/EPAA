@@ -1,0 +1,546 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20241.24.0308.0326                               -->
+<workbook original-version='18.1' source-build='2024.1.1 (20241.24.0308.0326)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='RF_train' inline='true' name='federated.0dr76yu0vmzyt61eplwxi0mnstau' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='RF_train' name='textscan.1ycmqus1ak0b4q13xo1jr191lau3'>
+            <connection class='textscan' directory='D:/Estudios/Ciclo X 2024-I/DPY/TG/EPAA/DA/datasets' filename='RF_train.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1ycmqus1ak0b4q13xo1jr191lau3' name='RF_train.csv' table='[RF_train#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_MX' separator=','>
+            <column datatype='integer' name='ID' ordinal='0' />
+            <column datatype='string' name='Activity' ordinal='1' />
+            <column datatype='string' name='Predicted' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1ycmqus1ak0b4q13xo1jr191lau3' name='RF_train.csv' table='[RF_train#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_MX' separator=','>
+            <column datatype='integer' name='ID' ordinal='0' />
+            <column datatype='string' name='Activity' ordinal='1' />
+            <column datatype='string' name='Predicted' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[RF_train.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[RF_train.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[RF_train.csv_DC5D53F3FB164263BFC16B195F17A093]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Activity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Activity]</local-name>
+            <parent-name>[RF_train.csv]</parent-name>
+            <remote-alias>Activity</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[RF_train.csv_DC5D53F3FB164263BFC16B195F17A093]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Predicted</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Predicted]</local-name>
+            <parent-name>[RF_train.csv]</parent-name>
+            <remote-alias>Predicted</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[RF_train.csv_DC5D53F3FB164263BFC16B195F17A093]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='RF_train.csv' datatype='table' name='[__tableau_internal_object_id__].[RF_train.csv_DC5D53F3FB164263BFC16B195F17A093]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Perú&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='RF_train.csv' id='RF_train.csv_DC5D53F3FB164263BFC16B195F17A093'>
+            <properties context=''>
+              <relation connection='textscan.1ycmqus1ak0b4q13xo1jr191lau3' name='RF_train.csv' table='[RF_train#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_MX' separator=','>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='string' name='Activity' ordinal='1' />
+                  <column datatype='string' name='Predicted' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='RF_train (2)' inline='true' name='federated.1n1h12u0didjis156beqh0bufe6j' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='RF_train' name='textscan.1vgb89q0bu1wvt1gpsvma03ai0hb'>
+            <connection class='textscan' directory='D:/Estudios/Ciclo X 2024-I/DPY/TG/EPAA/DA/datasets' filename='RF_train.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1vgb89q0bu1wvt1gpsvma03ai0hb' name='RF_train.csv' table='[RF_train#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_MX' separator=','>
+            <column datatype='integer' name='ID' ordinal='0' />
+            <column datatype='string' name='Activity' ordinal='1' />
+            <column datatype='string' name='Predicted' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1vgb89q0bu1wvt1gpsvma03ai0hb' name='RF_train.csv' table='[RF_train#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_MX' separator=','>
+            <column datatype='integer' name='ID' ordinal='0' />
+            <column datatype='string' name='Activity' ordinal='1' />
+            <column datatype='string' name='Predicted' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[RF_train.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[RF_train.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[RF_train.csv_5C47441A8C694F59A3C530F5B73F3369]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Activity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Activity]</local-name>
+            <parent-name>[RF_train.csv]</parent-name>
+            <remote-alias>Activity</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[RF_train.csv_5C47441A8C694F59A3C530F5B73F3369]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Predicted</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Predicted]</local-name>
+            <parent-name>[RF_train.csv]</parent-name>
+            <remote-alias>Predicted</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[RF_train.csv_5C47441A8C694F59A3C530F5B73F3369]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='RF_train.csv' datatype='table' name='[__tableau_internal_object_id__].[RF_train.csv_5C47441A8C694F59A3C530F5B73F3369]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Perú&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='RF_train.csv' id='RF_train.csv_5C47441A8C694F59A3C530F5B73F3369'>
+            <properties context=''>
+              <relation connection='textscan.1vgb89q0bu1wvt1gpsvma03ai0hb' name='RF_train.csv' table='[RF_train#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_MX' separator=','>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='string' name='Activity' ordinal='1' />
+                  <column datatype='string' name='Predicted' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Matriz de confusión con data no entrenada'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='RF_train' name='federated.0dr76yu0vmzyt61eplwxi0mnstau' />
+            <datasource caption='RF_train (2)' name='federated.1n1h12u0didjis156beqh0bufe6j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0dr76yu0vmzyt61eplwxi0mnstau'>
+            <column datatype='string' name='[Activity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Predicted]' role='dimension' type='nominal' />
+            <column-instance column='[Activity]' derivation='None' name='[none:Activity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Predicted]' derivation='None' name='[none:Predicted:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1n1h12u0didjis156beqh0bufe6j'>
+            <_.fcp.ObjectModelTableType.true...column caption='RF_train.csv' datatype='table' name='[__tableau_internal_object_id__].[RF_train.csv_5C47441A8C694F59A3C530F5B73F3369]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[RF_train.csv_5C47441A8C694F59A3C530F5B73F3369]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:RF_train.csv_5C47441A8C694F59A3C530F5B73F3369:qk]' pivot='key' type='quantitative' />
+            <_.fcp.ObjectModelTableType.false...column caption='RF_train.csv' datatype='integer' name='[__tableau_internal_object_id__].[RF_train.csv_5C47441A8C694F59A3C530F5B73F3369]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0dr76yu0vmzyt61eplwxi0mnstau].[none:Predicted:nk]' value='282' />
+            <format attr='height' field='[federated.0dr76yu0vmzyt61eplwxi0mnstau].[none:Activity:nk]' value='181' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1n1h12u0didjis156beqh0bufe6j].[__tableau_internal_object_id__].[cnt:RF_train.csv_5C47441A8C694F59A3C530F5B73F3369:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='color' center='100.0' field='[federated.1n1h12u0didjis156beqh0bufe6j].[__tableau_internal_object_id__].[cnt:RF_train.csv_5C47441A8C694F59A3C530F5B73F3369:qk]' palette='green_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.1n1h12u0didjis156beqh0bufe6j].[__tableau_internal_object_id__].[cnt:RF_train.csv_5C47441A8C694F59A3C530F5B73F3369:qk]' />
+              <text column='[federated.1n1h12u0didjis156beqh0bufe6j].[__tableau_internal_object_id__].[cnt:RF_train.csv_5C47441A8C694F59A3C530F5B73F3369:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.1n1h12u0didjis156beqh0bufe6j].[__tableau_internal_object_id__].[cnt:RF_train.csv_5C47441A8C694F59A3C530F5B73F3369:qk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='user' />
+                <format attr='font-size' value='14' />
+                <format attr='color' value='#f5f5f5' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0dr76yu0vmzyt61eplwxi0mnstau].[none:Activity:nk]</rows>
+        <cols>[federated.0dr76yu0vmzyt61eplwxi0mnstau].[none:Predicted:nk]</cols>
+      </table>
+      <simple-id uuid='{132BC911-C420-4D0E-B79B-9FA88387EA1B}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Matriz de confusión con data no entrenada' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='9125' id='8' name='Matriz de confusión con data no entrenada' pane-specification-id='0' param='[federated.1n1h12u0didjis156beqh0bufe6j].[__tableau_internal_object_id__].[cnt:RF_train.csv_5C47441A8C694F59A3C530F5B73F3369:qk]' type-v2='color' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='10' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='9' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Matriz de confusión con data no entrenada' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9125' id='8' name='Matriz de confusión con data no entrenada' pane-specification-id='0' param='[federated.1n1h12u0didjis156beqh0bufe6j].[__tableau_internal_object_id__].[cnt:RF_train.csv_5C47441A8C694F59A3C530F5B73F3369:qk]' type-v2='color' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{68FD0656-2591-44C8-806D-436469D941B5}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='63'>
+    <window class='worksheet' maximized='true' name='Matriz de confusión con data no entrenada'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='0' param='[federated.1n1h12u0didjis156beqh0bufe6j].[__tableau_internal_object_id__].[cnt:RF_train.csv_5C47441A8C694F59A3C530F5B73F3369:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0dr76yu0vmzyt61eplwxi0mnstau].[none:Activity:nk]</field>
+            <field>[federated.0dr76yu0vmzyt61eplwxi0mnstau].[none:Predicted:nk]</field>
+            <field>[federated.1n1h12u0didjis156beqh0bufe6j].[none:Activity:nk]</field>
+            <field>[federated.1n1h12u0didjis156beqh0bufe6j].[none:Predicted:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{3BA1805C-485D-4627-9DBA-15A16DEBA8B8}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Matriz de confusión con data no entrenada' />
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{B4120F31-1697-42C8-A325-6794863DF3F5}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Matriz de confusión con data no entrenada' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

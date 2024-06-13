@@ -17,11 +17,15 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+<<<<<<< HEAD
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "migration:generate": "npm run typeorm -- migration:generate -n",
     "migration:run": "npm run typeorm -- migration:run",
     "migration:revert": "npm run typeorm -- migration:revert"
+=======
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+>>>>>>> frontend
   },
   "dependencies": {
     "@nestjs/common": "10.0.0",
@@ -29,9 +33,15 @@
     "@nestjs/platform-express": "10.0.0",
     "@nestjs/typeorm": "10.0.2",
     "class-validator": "0.14.1",
+<<<<<<< HEAD
     "dotenv": "^16.4.5",
     "pg": "8.11.5",
     "reflect-metadata": "^0.1.12",
+=======
+    "dotenv": "16.4.5",
+    "pg": "8.11.5",
+    "reflect-metadata": "0.2.0",
+>>>>>>> frontend
     "rxjs": "7.8.1"
   },
   "devDependencies": {
@@ -40,7 +50,11 @@
     "@nestjs/testing": "10.0.0",
     "@types/express": "4.17.17",
     "@types/jest": "29.5.2",
+<<<<<<< HEAD
     "@types/node": "^20.12.12",
+=======
+    "@types/node": "20.3.1",
+>>>>>>> frontend
     "@types/supertest": "6.0.0",
     "@typescript-eslint/eslint-plugin": "6.0.0",
     "@typescript-eslint/parser": "6.0.0",
@@ -53,9 +67,15 @@
     "supertest": "6.3.3",
     "ts-jest": "29.1.0",
     "ts-loader": "9.4.3",
+<<<<<<< HEAD
     "ts-node": "^10.9.2",
     "tsconfig-paths": "4.2.0",
     "typescript": "^5.4.5"
+=======
+    "ts-node": "10.9.1",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "5.1.3"
+>>>>>>> frontend
   },
   "jest": {
     "moduleFileExtensions": [
