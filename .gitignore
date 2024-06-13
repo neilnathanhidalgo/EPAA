@@ -9,3 +9,99 @@ DA/*.xlsx
 DA/pruebas
 DA/Tableau
 *pdf
+
+#EPAA APP
+
+# dependencies
+epaa-app/node_modules/
+
+# Expo
+epaa-app/.expo/
+epaa-app/dist/
+epaa-app/web-build/
+
+# Native
+epaa-app/*.orig.*
+epaa-app/*.jks
+epaa-app/*.p8
+epaa-app/*.p12
+epaa-app/*.key
+epaa-app/*.mobileprovision
+
+# Metro
+epaa-app/.metro-health-check*
+
+# debug
+epaa-app/npm-debug.*
+epaa-app/yarn-debug.*
+epaa-app/yarn-error.*
+
+# macOS
+epaa-app/.DS_Store
+epaa-app/*.pem
+
+# local env files
+epaa-app/.env*.local
+
+# typescript
+epaa-app/*.tsbuildinfo
+
+# EPAA API
+
+# compiled output
+epaa-api/dist
+epaa-api/node_modules
+epaa-api/build
+
+# Logs
+epaa-api/logs
+epaa-api/*.log
+epaa-api/npm-debug.log*
+epaa-api/-debug.log*
+epaa-api/yarn-debug.log*
+epaa-api/yarn-error.log*
+epaa-api/lerna-debug.log*
+
+# OS
+epaa-api/.DS_Store
+
+# Tests
+epaa-api/coverage
+epaa-api/.nyc_output
+
+# IDEs and editors
+epaa-api/.idea
+epaa-api/.project
+epaa-api/.classpath
+epaa-api/.c9/
+epaa-api/*.launch
+epaa-api/.settings/
+epaa-api/*.sublime-workspace
+
+# IDE - VSCode
+epaa-api/.vscode/*
+epaa-api/!.vscode/settings.json
+epaa-api/!.vscode/tasks.json
+epaa-api/!.vscode/launch.json
+epaa-api/!.vscode/extensions.json
+
+# dotenv environment variable files
+epaa-api/.env
+epaa-api/.env.development.local
+epaa-api/.env.test.local
+epaa-api/.env.production.local
+epaa-api/.env.local
+
+# temp directory
+epaa-api/.temp
+epaa-api/.tmp
+
+# Runtime data
+epaa-api/pids
+epaa-api/*.pid
+epaa-api/*.seed
+epaa-api/*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+epaa-api/report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
