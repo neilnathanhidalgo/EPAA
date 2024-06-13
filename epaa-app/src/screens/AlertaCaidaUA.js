@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'; // Importa Dimensions para dimensiones de pantalla
 import { useFonts } from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
+
+const { width, height } = Dimensions.get('window'); // Obtén las dimensiones de la pantalla
 
 const ua = [
     { name1: 'Emilio', name2: 'Eduardo', lastname1: 'Díaz', lastname2: 'Garnique' },
@@ -43,7 +45,7 @@ const AlertaCaidaUA = () => {
 
             <Text style={[styles.title, styles.whiteText, styles.oswald]}>¡ALERTA!</Text>
 
-            <Ionicons name="warning" size={200} color={alertSent ? "#AA1A1F" : (blink ? "#FFFFFF" : "#AA1A1F")} />
+            <Ionicons name="warning" size={width * 0.5} color={alertSent ? "#AA1A1F" : (blink ? "#FFFFFF" : "#AA1A1F")} />
 
             <Text style={[styles.name, styles.whiteText, styles.oswald]}>{name1.toUpperCase()} {lastname1.toUpperCase()}</Text>
             <Text style={[styles.question, styles.whiteText, styles.oswald]}>¿HAS SUFRIDO UNA CAIDA?</Text>
@@ -73,44 +75,46 @@ const styles = StyleSheet.create({
         backgroundColor: '#0097AA',
         alignItems: 'center',
         justifyContent: 'center',
+        paddingHorizontal: width * 0.05, // Añade espacios horizontales proporcionales
     },
 
     title: {
-        fontSize: 65,
+        fontSize: width * 0.15, // Tamaño de fuente relativo
     },
 
     name: {
-        fontSize: 45,
+        fontSize: width * 0.12,
+        marginBottom: height * 0.02,
     },
 
     question: {
-        fontSize: 35,
-        marginBottom: 10,
+        fontSize: width * 0.075,
+        marginBottom: height * 0.01,
     },
 
     countdown: {
-        fontSize: 30,
-        marginBottom: 5,
+        fontSize: width * 0.07,
+        marginBottom: height * 0.01,
     },
 
     timer: {
-        fontSize: 30,
-        marginBottom: 20,
+        fontSize: width * 0.08,
+        marginBottom: height * 0.02,
     },
     cancel: {
-        fontSize: 25,
-        marginBottom: 10,
+        fontSize: width * 0.06,
+        marginBottom: height * 0.01,
     },
     cancelButton: {
         backgroundColor: '#02515B',
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        borderRadius: 20,
-        marginTop: 20,
+        paddingVertical: height * 0.02,
+        paddingHorizontal: width * 0.08,
+        borderRadius: width * 0.1,
+        marginTop: height * 0.01,
     },
     cancelButtonText: {
         color: '#FFFFFF',
-        fontSize: 20,
+        fontSize: width * 0.055,
         fontFamily: "Oswald",
         textTransform: "uppercase",
     },

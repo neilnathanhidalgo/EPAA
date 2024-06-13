@@ -12,7 +12,7 @@ const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar style='auto' backgroundColor="#FFFFFF"/>
-      
+
       {/* Rectángulos superiores */}
       <View style={[styles.rectangle, { backgroundColor: "#5CF4D6" }]} />
       <View style={[styles.rectangle, { backgroundColor: "#00E5BE" }]} />
@@ -35,8 +35,9 @@ const SplashScreen = ({ navigation }) => {
 
 export default SplashScreen;
 
-const screenHeight = Dimensions.get("window").height;
-const totalRectangleHeight = 8 * 7;
+const { height: screenHeight } = Dimensions.get("window");
+const rectangleHeight = screenHeight * 0.01; // Usar un porcentaje del alto de la pantalla para la altura de cada rectángulo
+const totalRectangleHeight = rectangleHeight * 8; // Altura total de los rectángulos (8 rectángulos en total)
 
 const styles = StyleSheet.create({
   container: {
@@ -51,15 +52,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    height: screenHeight - totalRectangleHeight,
+    height: screenHeight - totalRectangleHeight, // Altura del logoContainer relativa a la altura de la pantalla y los rectángulos
   },
   logo: {
-    width: 165,
-    height: "100%",
+    width: "50%", // Usar un porcentaje del ancho de la pantalla para la anchura del logo
+    height: "50%", // Usar un porcentaje de la altura del logoContainer para la altura del logo
     resizeMode: "contain",
   },
   rectangle: {
     width: "100%",
-    height: 10,
+    height: rectangleHeight, // Usar el valor calculado para la altura de los rectángulos
   },
 });

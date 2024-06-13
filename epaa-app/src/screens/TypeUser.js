@@ -4,6 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/native';
 
+const { height: screenHeight, width: screenWidth } = Dimensions.get("window");
+
 const TypeUser = () => {
     const navigation = useNavigation();
 
@@ -15,51 +17,43 @@ const TypeUser = () => {
         <View style={styles.container}>
             <StatusBar style='auto' backgroundColor='#FFFFFF'/>
 
-                {/*Rectángulos superiores*/}
-                <View style={[styles.rectangle, { backgroundColor: "#5CF4D6" }]} />
-                <View style={[styles.rectangle, { backgroundColor: "#00E5BE" }]} />
-                <View style={[styles.rectangle, { backgroundColor: "#00BBC2" }]} />
-                <View style={[styles.rectangle, { backgroundColor: "#0097AA" }]} />
+            {/* Rectángulos superiores */}
+            <View style={[styles.rectangle, { backgroundColor: "#5CF4D6" }]} />
+            <View style={[styles.rectangle, { backgroundColor: "#00E5BE" }]} />
+            <View style={[styles.rectangle, { backgroundColor: "#00BBC2" }]} />
+            <View style={[styles.rectangle, { backgroundColor: "#0097AA" }]} />
 
-                {/*BORRAR - ES SOLO UNA PRUEBA*/}
-                <TouchableOpacity style={styles.ppabutton} onPress={() => navigation.navigate('PPA')}>
-                    <Text style={styles.buttonText}>PPA</Text>
+            {/* Texto */}
+            <Text style={[styles.pText, fontsLoaded && { fontFamily: "Oswald" }]}>
+                QUIÉN USARÁ ESTE DISPOSITIVO
+            </Text>
+
+            {/* UA */}
+            <View style={styles.optionContainer}>
+                <Image source={require('../assets/UA.png')} style={styles.optionImage1} />
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('UALogin')}>
+                    <Text style={styles.buttonText}>USUARIO ASISTIDO</Text>
                 </TouchableOpacity>
+            </View>
 
-                {/* Texto */}
-                <Text style={[styles.pText, fontsLoaded && { fontFamily: "Oswald" }]}>
-                    QUIÉN USARÁ ESTE DISPOSITIVO
-                </Text>
+            {/* Cuidador */}
+            <View style={styles.optionContainer}>
+                <Image source={require('../assets/Cuidador.png')} style={styles.optionImage2} />
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CuiLogin')}>
+                    <Text style={styles.buttonText}>CUIDADOR</Text>
+                </TouchableOpacity>
+            </View>
 
-                {/* UA */}
-                <View style={styles.UAContainer}>
-                    <Image source={require('../assets/UA.png')} style={styles.UA} />
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('UALogin')}>
-                        <Text style={styles.buttonText}>USUARIO ASISTIDO</Text>
-                    </TouchableOpacity>
-                </View>
-
-                {/* Cuidador */}
-                <View style={styles.CuiContainer}>
-                    <Image source={require('../assets/Cuidador.png')} style={styles.Cui} />
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CuiLogin')}>
-                        <Text style={styles.buttonText}>CUIDADOR</Text>
-                    </TouchableOpacity>
-                </View>
-
-                {/* Rectángulos inferiores */}
-                <View style={[styles.rectangle, { backgroundColor: "#0097AA" }]} />
-                <View style={[styles.rectangle, { backgroundColor: "#00BBC2" }]} />
-                <View style={[styles.rectangle, { backgroundColor: "#00E5BE" }]} />
-                <View style={[styles.rectangle, { backgroundColor: "#5CF4D6" }]} />
+            {/* Rectángulos inferiores */}
+            <View style={[styles.rectangle, { backgroundColor: "#0097AA" }]} />
+            <View style={[styles.rectangle, { backgroundColor: "#00BBC2" }]} />
+            <View style={[styles.rectangle, { backgroundColor: "#00E5BE" }]} />
+            <View style={[styles.rectangle, { backgroundColor: "#5CF4D6" }]} />
         </View>
     );
 };
 
 export default TypeUser;
-
-const screenHeight = Dimensions.get("window").height;
-const totalRectangleHeight = 8 * 7;
 
 const styles = StyleSheet.create({
     container: {
@@ -71,66 +65,44 @@ const styles = StyleSheet.create({
     },
     pText: {
         color: "#0A7280",
-        fontSize: 31,
-        marginTop: 30,
+        fontSize: 0.075 * screenWidth, // Tamaño de fuente relativo
+        marginTop: 0.025 * screenHeight, // Margen superior relativo
     },
-    UAContainer: {
+    optionContainer: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: -110,
         width: "100%",
-        height: screenHeight - totalRectangleHeight,
     },
-    UA: {
-        width: 220,
-        height: "100%",
+    optionImage1: {
+        width: 0.6 * screenWidth, // Ancho relativo
+        height: "100%", // Altura ocupando todo el contenedor
         resizeMode: "contain",
     },
-    CuiContainer: {
-        flex: 1,
-        alignItems: "center",
-        marginTop: -110,
-        width: "100%",
-        height: screenHeight - totalRectangleHeight,
-    },
-    Cui: {
-        width: 210,
-        height: "100%",
+    optionImage2: {
+        width: 0.54 * screenWidth, // Ancho relativo
+        height: "100%", // Altura ocupando todo el contenedor
         resizeMode: "contain",
     },
     rectangle: {
         width: "100%",
-        height: 10,
+        height: 0.01 * screenHeight, // Altura relativa
     },
     button: {
         backgroundColor: "#006B78",
-        width: 240,       // Ancho fijo
-        height: 60,       // Alto fijo
-        borderRadius: 20,
-        borderTopLeftRadius: 0,
-        borderTopRightRadius: 0,
-        justifyContent: 'center', // Centrar texto verticalmente
-        alignItems: 'center', // Centrar texto horizontalmente
-        marginTop: -105,
+        width: 0.7 * screenWidth, // Ancho relativo
+        height: 0.075 * screenHeight, // Alto relativo
+        borderRadius: 0.04 * screenHeight, // Radio del borde relativo
+        borderTopLeftRadius: 0 * screenHeight,
+        borderTopRightRadius: 0 * screenHeight,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: -0.057 * screenHeight,
+        marginBottom: 0.07 * screenHeight,
     },
     buttonText: {
         color: "#FFFFFF",
         fontFamily: "Oswald",
-        fontSize: 27,
+        fontSize: 0.037 * screenHeight, // Tamaño de fuente relativo
     },
-
-
-    ppabutton: {
-        backgroundColor: "#006B78",
-        borderRadius: 20,
-        width: 60,
-        height: 50,
-        borderTopLeftRadius: 0,
-        borderTopRightRadius: 0,
-        justifyContent: 'center', // Centrar texto verticalmente
-        alignItems: 'center', // Centrar texto horizontalmente
-        marginTop: 10,
-    },
-
 });

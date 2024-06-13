@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 
-const ua = [
-    { name1: 'Emilio', name2: 'Eduardo', lastname1: 'Díaz', lastname2: 'Garnique' },
-];
+const { width, height } = Dimensions.get('window'); // Obtén las dimensiones de la pantalla
 
 const AlertaRangoCui = () => {
+    const { width, height } = Dimensions.get('window');
     const [fontsLoaded] = useFonts({
         Oswald: require("../assets/fonts/Oswald.ttf"),
     });
+
+    const ua = [
+        { name1: 'Emilio', name2: 'Eduardo', lastname1: 'Díaz', lastname2: 'Garnique' },
+    ];
 
     const { name1, lastname1 } = ua[0];
     const [blinking, setBlinking] = useState(true);
@@ -32,11 +35,11 @@ const AlertaRangoCui = () => {
         <View style={styles.container}>
             <Text style={[styles.title, styles.whiteText, styles.oswald]}>¡ALERTA!</Text>
 
-            <View style={styles.iconContainer}>
-                <Ionicons name="warning" size={300} color={blinking ? iconColor : "#AA1A1F"} />
+            <View style={[styles.iconContainer, { marginBottom: width * 0 }]}>
+                <Ionicons name="warning" size={width * 0.8} color={blinking ? iconColor : "#AA1A1F"} />
             </View>
 
-            <Text style={[styles.name, styles.whiteText, styles.oswald]}>{name1.toUpperCase()} {lastname1.toUpperCase()}</Text>
+            <Text style={[styles.name, styles.whiteText, styles.oswald]}>{`${name1.toUpperCase()} ${lastname1.toUpperCase()}`}</Text>
             <Text style={[styles.question, styles.whiteText, styles.oswald]}>SE HA SALIDO DEL RANGO</Text>
 
             <TouchableOpacity style={styles.atenderButton} onPress={toggleBlink}>
@@ -54,45 +57,46 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFA500',
         alignItems: 'center',
         justifyContent: 'center',
+        paddingHorizontal: 20,
     },
 
     title: {
-        fontSize: 65,
+        fontSize: width * 0.2,
     },
 
     name: {
-        fontSize: 60,
-        top: -30,
+        fontSize: width * 0.15,
+        marginBottom: height * 0.02,
     },
 
     question: {
-        fontSize: 40,
-        top: 0,
+        fontSize: width * 0.085,
+        marginBottom: width * 0.01,
     },
 
     whiteText: {
         color: '#FFFFFF',
     },
-    
+
     iconContainer: {
-        marginBottom: 20,
+        alignItems: 'center',
     },
-    
+
     atenderButton: {
         backgroundColor: '#02515B',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 250,
-        height: 75,
+        width: width * 0.6,
+        height: width * 0.18,
         borderRadius: 20,
-        marginTop: 40,
+        marginTop: width * 0.07,
     },
-    
+
     atenderButtonText: {
         color: '#FFFFFF',
-        fontSize: 40,
+        fontSize: width * 0.08,
     },
-    
+
     oswald: {
         fontFamily: "Oswald",
         textTransform: "uppercase",

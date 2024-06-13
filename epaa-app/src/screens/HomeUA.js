@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image, Platform, StatusBar as RNStatusBar, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, Platform, StatusBar as RNStatusBar, Text, TouchableOpacity, Dimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -8,28 +8,29 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+const { width, height } = Dimensions.get("window");
+
 const Stack = createStackNavigator();
 
 const cuidadores = [
     { name1: 'Felipe', lastname1: 'Adanaque Medina' },
-    { name2: 'Alejandra', lastname2: 'Ruiz Zapata' },
-    { name3: 'Esteban', lastname3: 'Castillo Soto' },
-    { name4: 'Mirella', lastname4: 'Rufino Granja' },
-  ];
+    { name1: 'NOMBRE', lastname1: 'APELLIDO' },
+    { name1: 'NOMBRE', lastname1: 'APELLIDO' },
+];
 
-const HomeUA = ({navigation}) => {   
+const HomeUA = ({ navigation }) => {
     const [fontsLoaded] = useFonts({
         Oswald: require("../assets/fonts/Oswald.ttf"),
     });
 
     if (!fontsLoaded) {
-        return null; // O muestra un indicador de carga
+        return null; // Muestra un indicador de carga o retorno nulo
     }
 
     return (
         <View style={styles.container}>
             <StatusBar style='auto' />
-            
+
             {/* Barra superior */}
             <View style={[styles.rectangle, styles.topBar]}>
                 <View style={styles.topBarContent}>
@@ -37,78 +38,67 @@ const HomeUA = ({navigation}) => {
                     {/* Contenedor para HOME y texto */}
                     <TouchableOpacity onPress={() => navigation.navigate('HomeUA')}>
                         <View style={styles.homeContainer}>
-                            <Ionicons name="home" size={40} color="#FFFFFF" style={styles.home} />
-                            <Text style={[styles.homeText, { fontFamily: "Oswald" }]}>HOME</Text>
+                            <Ionicons name="home" size={width * 0.1} color="#FFFFFF" style={styles.home} />
+                            <Text style={[styles.homeText, { fontFamily: "Oswald", fontSize: width * 0.05 }]}>HOME</Text>
                         </View>
                     </TouchableOpacity>
-                    
+
                     {/* Logo */}
-                    <Image source={require('../assets/logo.png')} style={styles.logo} />
+                    <Image source={require('../assets/logo.png')} style={[styles.logo, { width: width * 0.13, height: width * 0.13 }]} />
 
                     {/* Notificaciones */}
-                    <Ionicons name="notifications" size={45} color="#FFFFFF" style={styles.notif} />
-                    
+                    <Ionicons name="notifications" size={width * 0.12} color="#FFFFFF" style={styles.notif} />
+
                     {/* Contenedor para PERFIL y texto */}
                     <View style={styles.profileContainer}>
-                        <Ionicons name="person-circle-outline" size={55} color="#FFFFFF" style={styles.profile} />
-                        <Text style={[styles.profileText, { fontFamily: "Oswald" }]}>PERFIL</Text>
+                        <Ionicons name="person-circle-outline" size={width * 0.14} color="#FFFFFF" style={styles.profile} />
+                        <Text style={[styles.profileText, { fontFamily: "Oswald", fontSize: width * 0.05 }]}>PERFIL</Text>
                     </View>
                 </View>
             </View>
-            
+
             {/* Contenedor para CUIDADORES e icono LL */}
             <View style={styles.cuidadoresContainer}>
-                <Text style={[styles.c, { fontFamily: "Oswald" }]}>CUIDADORES</Text>
-                <FontAwesome6 name="square-phone" size={87} color="#FFBE00" style={styles.ll} />
+                <Text style={[styles.c, { fontFamily: "Oswald", fontSize: width * 0.135 }]}>CUIDADOR</Text>
+                <FontAwesome6 name="square-phone" size={width * 0.25} color="#FFBE00" style={styles.ll} />
             </View>
 
             {/* Contenedor para CUIDADOR1 */}
-            <View style={styles.cuidador1Container}>
-                <View style={[styles.c1, { backgroundColor: "#1B3B52"}]}>
-                    <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
+            <View style={styles.cuidadorContainer}>
+                <View style={styles.c1}>
+                    <Ionicons name="person-circle-outline" size={width * 0.25} color="#FFFFFF" style={styles.c1Icon} />
                     <View style={styles.c1TextContainer}>
-                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[0].name1.toUpperCase()}</Text>
-                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[0].lastname1.toUpperCase()}</Text>
+                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[0].name1}</Text>
+                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[0].lastname1}</Text>
                     </View>
                 </View>
             </View>
 
             {/* Contenedor para CUIDADOR2 */}
-            <View style={[styles.cuidador2Container]}>
-                <View style={[styles.c1, { backgroundColor: "#F6931E" }]}>
-                    <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
+            <View style={styles.cuidadorContainer}>
+                <View style={styles.c2}>
+                    <Ionicons name="person-circle-outline" size={width * 0.25} color="#FFFFFF" style={styles.c1Icon} />
                     <View style={styles.c1TextContainer}>
-                    <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[1].name2.toUpperCase()}</Text>
-                    <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[1].lastname2.toUpperCase()}</Text>
+                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[1].name1}</Text>
+                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[1].lastname1}</Text>
                     </View>
                 </View>
             </View>
 
             {/* Contenedor para CUIDADOR3 */}
-            <View style={[styles.cuidador3Container]}>
-                <View style={[styles.c1, { backgroundColor: "#FB663C" }]}>
-                    <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
+            <View style={styles.cuidadorContainer}>
+                <View style={styles.c3}>
+                    <Ionicons name="person-circle-outline" size={width * 0.25} color="#FFFFFF" style={styles.c1Icon} />
                     <View style={styles.c1TextContainer}>
-                    <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[2].name3.toUpperCase()}</Text>
-                    <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[2].lastname3.toUpperCase()}</Text>
-                    </View>
-                </View>
-            </View>
-
-            {/* Contenedor para CUIDADOR4 */}
-            <View style={[styles.cuidador4Container]}>
-                <View style={[styles.c1, { backgroundColor: "#8A572C" }]}>
-                    <Ionicons name="person-circle-outline" size={95} color="#FFFFFF" style={styles.c1Icon} />
-                    <View style={styles.c1TextContainer}>
-                    <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[3].name4.toUpperCase()}</Text>
-                    <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[3].lastname4.toUpperCase()}</Text>
+                        <Text style={[styles.c1Text, { fontFamily: "Oswald" }]}>{cuidadores[2].name1}</Text>
+                        <Text style={[styles.c1Text, styles.c1Apellido, { fontFamily: "Oswald" }]}>{cuidadores[2].lastname1}</Text>
                     </View>
                 </View>
             </View>
 
             {/* Botón "+ AGREGAR CUIDADOR" */}
             <TouchableOpacity style={styles.addButton}>
-            <Text style={styles.addButtonText}>+ AGREGAR CUIDADOR</Text>
+                <Text style={[styles.addButtonText]}>+ AGREGAR CUIDADOR</Text>
             </TouchableOpacity>
 
             {/* Barra inferior */}
@@ -116,14 +106,14 @@ const HomeUA = ({navigation}) => {
                 <View style={styles.bottomBarContent}>
                     {/* Contenedor para CALENDAR y texto */}
                     <View style={styles.calContainer}>
-                        <Ionicons name="calendar" size={50} color="#FFFFFF" style={styles.cal} />
-                        <Text style={[styles.calText, { fontFamily: "Oswald" }]}>RECORDATORIOS</Text>
+                        <Ionicons name="calendar" size={width * 0.12} color="#FFFFFF" style={styles.cal} />
+                        <Text style={[styles.calText, { fontFamily: "Oswald", fontSize: width * 0.05 }]}>RECORDATORIOS</Text>
                     </View>
-                    
+
                     {/* Contenedor para PERFIL y texto */}
                     <View style={styles.recomContainer}>
-                        <AntDesign name="like2" size={52} color="#FFFFFF" style={styles.recom} />
-                        <Text style={[styles.recomText, { fontFamily: "Oswald" }]}>RECOMENDACIONES</Text>
+                        <AntDesign name="like2" size={width * 0.12} color="#FFFFFF" style={styles.recom} />
+                        <Text style={[styles.recomText, { fontFamily: "Oswald", fontSize: width * 0.05 }]}>RECOMENDACIONES</Text>
                     </View>
                 </View>
             </View>
@@ -142,7 +132,7 @@ const styles = StyleSheet.create({
 
     rectangle: {
         width: '100%',
-        height: 80,
+        height: height * 0.1,
     },
 
     topBar: {
@@ -154,7 +144,7 @@ const styles = StyleSheet.create({
     topBarContent: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: 20,
+        paddingHorizontal: width * 0.05,
     },
 
     homeContainer: {
@@ -168,25 +158,21 @@ const styles = StyleSheet.create({
 
     homeText: {
         color: '#FFFFFF',
-        fontSize: 16,
-        marginTop: -5,
+        marginTop: -10,
     },
 
     logo: {
-        width: 55,
-        height: 55,
-        marginLeft: 17,
+        marginLeft: width * 0.05,
     },
 
     notif: {
-        padding: 0,
-        marginLeft: 147,
+        marginLeft: width * 0.31,
     },
 
     profileContainer: {
         flexDirection: 'column',
         alignItems: 'center',
-        marginLeft: 13,
+        marginLeft: width * 0.05,
     },
 
     profile: {
@@ -195,7 +181,6 @@ const styles = StyleSheet.create({
 
     profileText: {
         color: '#FFFFFF',
-        fontSize: 16,
         marginTop: -10,
     },
 
@@ -203,104 +188,107 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 10,
+        marginTop: height * 0.015,
     },
 
     c: {
         color: '#0A7280',
-        fontSize: 45,
-        marginRight: 25,
+        marginRight: width * 0.035,
     },
 
     ll: {
         padding: 0,
     },
 
-    cuidador1Container: {
-        alignItems: 'center',
+    cuidadorContainer: {
         justifyContent: 'center',
-        marginTop: 10,
-    },
-
-    cuidador2Container: {
         alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
-    },
-
-    cuidador3Container: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
-    },
-
-    cuidador4Container: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
+        marginTop: height * 0.02,
     },
 
     c1: {
-        height: 105, // Incrementado para ajustar el icono
-        width: 350,
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 5,
-        borderRadius: 25, // Bordes redondeados
+        borderRadius: 25,
+        width: width * 0.85,
+        height: height * 0.14,
+        backgroundColor: '#02515B',
+    },
+
+    c2: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderRadius: 25,
+        width: width * 0.85,
+        height: height * 0.14,
+        backgroundColor: '#F6931E',
+    },
+
+    c3: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderRadius: 25,
+        width: width * 0.85,
+        height: height * 0.14,
+        backgroundColor: '#FB663C',
     },
 
     c1Icon: {
-        marginLeft: 10, // Centrar el ícono hacia la izquierda
-        marginRight: 10, // Centrar el texto según el ícono
+        marginLeft: width * 0.035,
     },
 
     c1TextContainer: {
         flexDirection: 'column',
+        marginLeft: height * 0.015,
     },
 
     c1Text: {
         color: '#FFFFFF',
-        fontSize: 27, // Ajustado para mejor visibilidad
+        fontFamily: 'Oswald',
+        fontSize: width * 0.07,
     },
 
     c1Apellido: {
-        marginTop: 0, // Espacio entre NOMBRE y APELLIDO
+        fontSize: width * 0.07,
     },
 
     addButton: {
+        position: 'absolute',
+        bottom: height * 0.125,
         backgroundColor: '#02515B',
+        width: width * 0.8,
+        height: height * 0.06,
         alignItems: 'center',
         justifyContent: 'center',
-        height: 50,
-        width: 300,
-        marginHorizontal: 'auto',
-        borderRadius: 20,
-        marginTop: 23, // Ajusta según sea necesario
+        borderRadius: 25,
+        alignSelf: 'center',
     },
-    
+
     addButtonText: {
         color: '#FFFFFF',
-        fontSize: 20,
         fontFamily: 'Oswald',
-    },    
+        fontSize: width * 0.05,
+    },
 
     bottomBar: {
         position: 'absolute',
         bottom: 0,
         backgroundColor: '#02515B',
+        width: '100%',
+        height: height * 0.1,
     },
 
     bottomBarContent: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: 'auto',
+        paddingVertical: height * 0.005,
     },
 
     calContainer: {
         flexDirection: 'column',
         alignItems: 'center',
-        marginTop: 3,
+        justifyContent: 'center',
     },
 
     cal: {
@@ -309,15 +297,14 @@ const styles = StyleSheet.create({
 
     calText: {
         color: '#FFFFFF',
-        fontSize: 16,
-        marginTop: -5,
+        marginTop: height * -0.001,
     },
 
     recomContainer: {
         flexDirection: 'column',
         alignItems: 'center',
-        marginLeft: 55,
-        marginTop: 3,
+        justifyContent: 'center',
+        marginLeft: width * 0.1,
     },
 
     recom: {
@@ -326,7 +313,6 @@ const styles = StyleSheet.create({
 
     recomText: {
         color: '#FFFFFF',
-        fontSize: 16,
-        marginTop: -5,
+        marginTop: height * -0.005,
     },
 });

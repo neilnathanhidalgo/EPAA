@@ -10,7 +10,6 @@ import CuiLogin from './src/screens/CuiLogin';
 import UALogin from './src/screens/UALogin';
 import HomeCui from './src/screens/HomeCui';
 import AlertaCaidaUA from './src/screens/AlertaCaidaUA';
-import PPA from './src/screens/PPA';
 import AlertaCaidaCui from './src/screens/AlertaCaidaCui';
 import AlertaRangoCui from './src/screens/AlertaRangoCui';
 import AlertaAyudaCui from './src/screens/AlertaAyudaCui';
@@ -33,10 +32,6 @@ const App = () => {
         <Stack.Screen name="AlertaCaidaCui" component={AlertaCaidaCui} options={{ headerShown: false }} />
         <Stack.Screen name="AlertaRangoCui" component={AlertaRangoCui} options={{ headerShown: false }} />
         <Stack.Screen name="AlertaAyudaCui" component={AlertaAyudaCui} options={{ headerShown: false }} />
-
-
-        {/* PRUEBA PANTALLAS ALERTAS */}
-        <Stack.Screen name="PPA" component={PPA} options={{ headerShown: false }} />
 
 
       </Stack.Navigator>
