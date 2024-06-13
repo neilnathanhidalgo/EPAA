@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   logoContainer: {
     alignItems: 'flex-start',
     paddingHorizontal: screenWidth * 0.05, // Ajustar el paddingHorizontal basado en el ancho de la pantalla
-    paddingTop: screenHeight * 0.1, // Ajustar el paddingTop basado en la altura de la pantalla
+    paddingTop: screenHeight * 0.05, // Ajustar el paddingTop basado en la altura de la pantalla
   },
   logo: {
     width: screenWidth * 0.2, // Ajustar el ancho y alto basado en el ancho de la pantalla
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   welcomeText: {
     color: "#2A7581",
     fontSize: screenWidth * 0.09, // Ajustar el tamaño de la fuente basado en el ancho de la pantalla
-    marginTop: screenHeight * 0.025, // Ajustar el marginTop basado en la altura de la pantalla
+    marginTop: screenHeight * 0.02, // Ajustar el marginTop basado en la altura de la pantalla
     textAlign: 'left',
     marginLeft: screenWidth * 0.1, // Ajustar el marginLeft basado en el ancho de la pantalla
   },
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   lemaText: {
     color: "#02515B",
-    fontSize: screenWidth * 0.06, // Ajustar el tamaño de la fuente basado en el ancho de la pantalla
+    fontSize: screenWidth * 0.055, // Ajustar el tamaño de la fuente basado en el ancho de la pantalla
     marginTop: screenHeight * 0.025, // Ajustar el marginTop basado en la altura de la pantalla
     textAlign: 'center',
     marginHorizontal: screenWidth * 0.1, // Ajustar el marginHorizontal basado en el ancho de la pantalla
