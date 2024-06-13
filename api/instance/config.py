@@ -1,1 +1,0 @@
-SECRET_KEY = 'tu_super_secreto'
