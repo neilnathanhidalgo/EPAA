@@ -105,3 +105,69 @@ epaa-api/*.pid.lock
 # Diagnostic reports (https://nodejs.org/api/report.html)
 epaa-api/report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
+#API PREDICTIONS
+
+# Entornos virtuales
+/api/venv/
+/api/ENV/
+/api/env/
+/api/.venv/
+/api/.ENV/
+
+# Archivos de configuración de entorno
+/api/.env
+/api/.env.*
+
+# Compilación de archivos Python
+/api/__pycache__/
+/api/*.py[cod]
+/api/*$py.class
+
+# Configuración de IDEs y editores
+/api/.idea/
+/api/.vscode/
+/api/*.sublime-project
+/api/*.sublime-workspace
+
+# Archivos de registro
+/api/*.log
+
+# Archivos de bases de datos locales
+/api/*.sqlite3
+/api/*.db
+
+# Archivos generados
+/api/*.bak
+/api/*.swp
+
+# Directorios de distribución
+/api/dist/
+/api/build/
+/api/*.egg-info/
+
+# Archivos creados por pip
+/api/pip-log.txt
+/api/pip-delete-this-directory.txt
+
+# Configuraciones de PyTest
+/api/.pytest_cache/
+/api/.tox/
+/api/.coverage
+/api/htmlcov/
+/api/.cache/
+/api/nosetests.xml
+/api/coverage.xml
+/api/*.cover
+/api/.hypothesis/
+
+# Archivos de Jupyter Notebooks
+/api/.ipynb_checkpoints
+
+# Archivos temporales
+/api/*.tmp
+/api/*.temp
+/api/*.tmp.*
+
+# Otros archivos que deseas ignorar
+/api/.DS_Store
+/api/Thumbs.db
