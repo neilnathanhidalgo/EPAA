@@ -1,30 +1,29 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-<<<<<<< HEAD
-import { DatabaseModule } from './config/database.module';
-import { AsistenteController } from './controllers/asistente.controller';
-import { AsistenteService } from './services/asistente.service';
+import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Asistente } from './models/asistente.entity';
-import { AdultoMayorController } from './controllers/adulto-mayor.controller';
-import { AdultoMayorService } from './services/adulto-mayor.service';
-import { AdultoMayor } from './models/adulto_mayor.entity';
+import { ConfigModule } from '@nestjs/config';
+import { AsistenteModule } from './asistente/asistente.module';
 
 @Module({
-    imports: [
-        DatabaseModule,
-        TypeOrmModule.forFeature([Asistente, AdultoMayor]),
-    ],
-    controllers: [AppController, AsistenteController, AdultoMayorController],
-    providers: [AppService, AsistenteService, AdultoMayorService],
-=======
-import { DatabaseModule } from 'config/database.module';
-
-@Module({
-  imports: [DatabaseModule],
+  imports: [
+    ConfigModule.forRoot(),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: process.env.DB_HOST,
+      port: parseInt(process.env.DB_PORT, 10),
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE,
+      schema: 'epaa',
+      autoLoadEntities: true,
+      synchronize: false,
+    }),
+    UsersModule,
+    AsistenteModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
->>>>>>> frontend
 })
 export class AppModule {}
