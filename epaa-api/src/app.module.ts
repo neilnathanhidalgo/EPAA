@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { AsistenteModule } from './asistente/asistente.module';
+import { AdultoMayorModule } from './adulto_mayor/adulto_mayor.module';
+import { AlertaModule } from './alerta/alerta.module';
 
 @Module({
   imports: [
@@ -20,8 +21,9 @@ import { AsistenteModule } from './asistente/asistente.module';
       autoLoadEntities: true,
       synchronize: false,
     }),
-    UsersModule,
     AsistenteModule,
+    AdultoMayorModule,
+    AlertaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

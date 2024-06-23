@@ -1,9 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Asistente {
+export class AdultoMayor {
   @PrimaryGeneratedColumn()
-  id_asistente: number;
+  id_adulto_mayor: number;
 
   @Column()
   nombres: string;
@@ -22,6 +22,9 @@ export class Asistente {
 
   @Column({ nullable: true })
   foto_perfil?: string;
+
+  @Column()
+  seguro: string;
 
   @Column()
   pin: string;

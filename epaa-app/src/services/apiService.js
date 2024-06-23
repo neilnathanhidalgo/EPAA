@@ -1,10 +1,9 @@
 import axios from "axios";
-
-const BASE_URL = "http://192.168.0.13:5000";
+import { PREDICTION_URL } from "@env";
 
 export const predict = async (features) => {
   try {
-    const response = await axios.post(`${BASE_URL}/predict`, {
+    const response = await axios.post(`${PREDICTION_URL}/predict`, {
       features,
     });
     return response.data;
